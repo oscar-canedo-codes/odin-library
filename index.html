@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Library</title>
+    <script src="javascript.js" defer></script>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <!-- Main Container -->
+    <main class="main">
+        <!-- Nav -->
+        <header class="main__header">
+            <h1 class="main__title">Library</h1>
+            <button type="submit" id="addBookBtn" class="main__add-button">
+                + Add Book
+            </button>
+        </header>
+        <!-- Grid -->
+        <section class="books">
+            <!-- Article -->
+            <article class="book">
+                <h2 class="book__title"></h2>
+                <p class="book__author"></p>
+                <p class="book__pages"></p>
+                <button class="book__read">
+                    <label for="isRead"></label>
+                    <input type="checkbox" id="isRead" class="book__readInput" />
+                </button>
+                <button class="book__removeButton"></button>
+            </article>
+            <!-- Modal -->
+            <div class="modal" id="modal">
+                <!-- Container -->
+                <div class="modal__container">
+                    <!-- Header -->
+                    <div class="modal__header">
+                        <h3 class="modal__title">New Book</h3>
+                        <div class="modal__close">&times;</div>
+                    </div>
+                    <!-- Form -->
+                    <form class="modal__form" id="form">
+                        <label for="title" class="modal__label">Title:</label>
+                        <input type="text" id="title" name="title" placeholder="Book Title" required=""
+                            class="modal__input" />
+
+                        <label for="author" class="modal__label">Author:</label>
+                        <input type="text" id="author" name="author" placeholder="Author" required=""
+                            class="modal__input" />
+
+                        <label for="pages" class="modal__label">Number of pages:</label>
+                        <input type="number" id="pages" name="pages" placeholder="Pages" autocomplete="off" required=""
+                            class="modal__input" />
+
+                        <label for="read" class="modal__label">Have you read the book?
+                            <input type="checkbox" id="read" name="read" class="modal__checkbox" />
+                        </label>
+
+                        <input type="submit" value="Submit" class="modal__submit" />
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>Copyright © OscarCanedoCodes</p>
+    </footer>
+</body>
+
+</html>

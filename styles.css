@@ -1,0 +1,211 @@
+/* Editor Base Template */
+
+:root {
+  --yellow: #ffc600;
+  --black: #272727;
+  --blue: #203b60;
+  --white: #ffffff;
+  --orange: #ff8f1f;
+  --fuschia: #ec1b92;
+}
+
+html {
+  /* border-box box model allows us to add padding and border to our elements without increasing their size */
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-weight: 900;
+  color: var(--black);
+  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.07);
+}
+
+/*We inherit box-sizing: border-box; from our <html> selector
+      Apparently this is a bit better than applying box-sizing: border-box; directly to the * selector
+    */
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  background-image: url("./assests/topography"),
+    linear-gradient(110deg, #f93d66, #6d47d9);
+  background-size: 340px, auto;
+  min-height: calc(100vh - 100px);
+  margin: 20px;
+  background-attachment: fixed;
+  letter-spacing: -1px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 5px 0;
+}
+
+/* Container */
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.main__header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  min-height: 8vh;
+  top: 0%;
+  width: 100%;
+  background: var(--fuschia);
+}
+
+.main__title {
+  font-size: 1.6rem;
+  color: var(--white);
+  letter-spacing: 2px;
+}
+
+.main__add-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 50px;
+  font-size: 25px;
+  border-radius: 10px;
+  border: solid 3px black;
+}
+
+.books {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px; /* Adjust gap as needed */
+}
+
+.book {
+}
+
+.book__title {
+}
+
+.book__author {
+}
+
+.book__read {
+}
+
+.book_pages {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.book__remove {
+  font-size: 20px;
+  height: 35px;
+  width: 110px;
+  border-radius: 10px;
+  border: solid 3px black;
+  background-color: #d7d9da;
+}
+
+.modal {
+  display: hidden; /* Hidden by default */
+  position: fixed;
+  z-index: 1000; /* Ensure it's on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  transition: 0.5s ease;
+  margin-top: 2rem;
+  border: 5px solid black;
+  border-radius: 25px;
+  padding: 20px;
+  background-color: rgba(246, 74, 0, 0.887);
+  width: 60%;
+  max-width: 400px;
+  padding: 1.3rem;
+}
+
+.modal__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal__title {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 100;
+  color: var(--white);
+  letter-spacing: 1px;
+}
+.modal__close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  color: rgba(128, 0, 128, 0.5);
+}
+
+.modal__form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin: 15% auto; /* 15% from the top and centered */
+}
+
+.modal__label {
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.modal__input,
+.modal__select {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.modal__submit {
+  background-color: rgba(128, 0, 128, 0.5);
+  color: var(--white);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  letter-spacing: 2px;
+  padding: 0.8em;
+  margin-top: 2em;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .modal__container {
+    width: 90%;
+  }
+}
+
+.footer {
+  /* ... */
+}
