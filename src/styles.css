@@ -279,17 +279,16 @@ h6 {
 .carousel {
   position: relative;
   width: 100%;
-  max-width: 300px;
-  height: 250px;
+  max-width: 600px;
+  margin: auto;
   overflow: hidden;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.slides {
+.carouel__slides {
   display: flex;
   transition: transform 0.5s ease-in-out;
-  position: relative;
 }
 
 .slide {
@@ -301,14 +300,14 @@ h6 {
   left: 0;
 }
 
-.slide[data-active] {
+.carousel__slide[data-active] {
   opacity: 1;
   position: relative;
 }
 
 .carousel-button {
   position: absolute;
-  top: 60%;
+  top: 50%;
   transform: translateY(-50%);
   background-color: rgba(0, 0, 0, 0.5);
   border: none;
@@ -318,10 +317,10 @@ h6 {
   z-index: 1;
 }
 
-.carousel-button.next {
+.carousel__button--next {
   right: 10px;
 }
-.carousel-button.previous {
+.carousel__button--previous {
   left: 10px;
 }
 
