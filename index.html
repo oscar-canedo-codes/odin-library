@@ -10,65 +10,188 @@
 </head>
 
 <body>
-    <!-- Main Container -->
-    <main class="main">
+    <!-- Layout Container -->
+    <div class="page">
         <!-- Nav -->
-        <header class="main__header">
-            <h1 class="main__title">Library</h1>
-            <button type="submit" id="addBookBtn" class="main__add-button">
-                + Add Book
-            </button>
+        <header class="header">
+            <div class="header__logo">LOGO</div>
+            <h1 class="header__title">Library</h1>
+            <button class="header__add-book-button" id="addBookButton" aria-label="Add a new book">+ Add Book</button>
         </header>
-        <!-- Grid -->
-        <section class="books">
-            <!-- Article -->
-            <article class="book">
-                <h2 class="book__title"></h2>
-                <p class="book__author"></p>
-                <p class="book__pages"></p>
-                <button class="book__read">
-                    <label for="isRead"></label>
-                    <input type="checkbox" id="isRead" class="book__readInput" />
-                </button>
-                <button class="book__removeButton"></button>
-            </article>
-            <!-- Modal -->
-            <div class="modal" id="modal">
-                <!-- Container -->
-                <div class="modal__container">
-                    <!-- Header -->
-                    <div class="modal__header">
-                        <h3 class="modal__title">New Book</h3>
-                        <div class="modal__close">&times;</div>
+
+        <!-- Main Container -->
+        <main class="main">
+            <!-- Grid Articles Container -->
+            <section class="library" id="library">
+
+                <!-- Card 1 -->
+                <article class="book" id="book">
+                    <div class="book__header">
+                        <figure class="book__figure">
+                            <img src="https://satyr.io/400x200?text=book__image" alt="" class="book__image">
+                        </figure>
                     </div>
-                    <!-- Form -->
-                    <form class="modal__form" id="form">
-                        <label for="title" class="modal__label">Title:</label>
-                        <input type="text" id="title" name="title" placeholder="Book Title" required=""
-                            class="modal__input" />
 
-                        <label for="author" class="modal__label">Author:</label>
-                        <input type="text" id="author" name="author" placeholder="Author" required=""
-                            class="modal__input" />
+                    <div class="book__body">
+                        <h2 class="book__title">The Brothers Karazamov</h2>
+                        <h3 class="book__subtitle">
+                            book Subtitle
+                        </h3>
+                        <p class="book__copy">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis sint perspiciatis
+                            deleniti ab possimus ut? Ducimus fugiat hic velit necessitatibus. Lorem ipsum dolor
+                            sit amet consectetur adipisicing elit. Repellendus sapiente harum soluta excepturi ut
+                            temporibus, at amet corporis id asperiores.
+                        </p>
+                    </div>
 
-                        <label for="pages" class="modal__label">Number of pages:</label>
-                        <input type="number" id="pages" name="pages" placeholder="Pages" autocomplete="off" required=""
-                            class="modal__input" />
+                    <footer class="book__footer">
+                        <div class="book__actions">
+                            <button class="book__remove-button" aria-label="Remove book">
+                                Remove
+                            </button>
 
-                        <label for="read" class="modal__label">Have you read the book?
-                            <input type="checkbox" id="read" name="read" class="modal__checkbox" />
-                        </label>
+                        </div>
+                    </footer>
+                </article>
 
-                        <input type="submit" value="Submit" class="modal__submit" />
-                    </form>
+                <!-- Card 2 -->
+                <article class="book" id="book">
+                    <div class="book__header">
+                        <figure class="book__figure">
+                            <img src="https://satyr.io/400x200?text=book__image" alt="" class="book__image">
+                        </figure>
+                    </div>
+                    <div class="book__body">
+                        <h2 class="book__title">Song of Solomon</h2>
+                        <h3 class="book__subtitle">
+                            book Subtitle
+                        </h3>
+                        <p class="book__copy">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis sint perspiciatis
+                            deleniti ab possimus ut? Ducimus fugiat hic velit necessitatibus. Lorem ipsum dolor
+                            sit amet consectetur adipisicing elit. Repellendus sapiente harum soluta excepturi ut
+                            temporibus, at amet corporis id asperiores.
+                        </p>
+                    </div>
+                    <footer class="book__footer">
+                        <div class="book__actions">
+                            <button class="book__remove-button" aria-label="Remove book">
+                                Remove
+                            </button>
+                        </div>
+                    </footer>
+                </article>
+
+                <!-- Card 3 -->
+                <article class="book" id="book">
+                    <div class="book__header">
+                        <figure class="book__figure">
+                            <img src="https://satyr.io/400x200?text=book__image" alt="" class="book__image">
+                        </figure>
+                    </div>
+                    <div class="book__body">
+                        <h2 class="book__title">The Golden Pavillion</h2>
+                        <h3 class="book__subtitle">
+                            book Subtitle
+                        </h3>
+                        <p class="book__copy">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis sint perspiciatis
+                            deleniti ab possimus ut? Ducimus fugiat hic velit necessitatibus. Lorem ipsum dolor
+                            sit amet consectetur adipisicing elit. Repellendus sapiente harum soluta excepturi ut
+                            temporibus, at amet corporis id asperiores.
+                        </p>
+                    </div>
+                    <footer class="book__footer">
+                        <div class="book__actions">
+                            <button class="book__remove-button" aria-label="Remove book">
+                                Remove
+                            </button>
+                        </div>
+                    </footer>
+                </article>
+
+                <!-- New Books will be dynamically added here -->
+
+            </section>
+
+
+            <!-- Modal -->
+            <dialog class="modal hidden" id="modal" role="dialog" aria-labelledby="modalTitle">
+                <!-- Header -->
+                <div class="modal__header">
+                    <h3 class="modal__title" id="modalTitle">New Book</h3>
+                    <div class="modal__close" id="modalClose" aria-label="Close dialog">&times;</div>
                 </div>
-            </div>
-        </section>
-    </main>
+                <!-- Form -->
+                <form class="modal__form" id="form">
+                    <label for="title" class="modal__label">Title:</label>
+                    <input type="text" id="title" name="title" placeholder="Book Title" required=""
+                        class="modal__input" />
 
-    <footer class="footer">
-        <p>Copyright © OscarCanedoCodes</p>
-    </footer>
+                    <label for="author" class="modal__label">Author:</label>
+                    <input type="text" id="author" name="author" placeholder="Author" required=""
+                        class="modal__input" />
+
+                    <label for="pages" class="modal__label">Number of pages:</label>
+                    <input type="number" id="pages" name="pages" placeholder="Pages" autocomplete="off" required=""
+                        class="modal__input" />
+
+                    <label for="read" class="modal__label">Have you read the book?
+                        <input type="checkbox" id="read" name="read" class="modal__checkbox" />
+                    </label>
+
+                    <input type="submit" value="Submit" class="modal__submit" />
+                </form>
+            </dialog>
+        </main>
+
+        <!-- Aside - Sidebar: Carousel -->
+        <aside class="sidebar">
+            <div class="sidebar__title">Newest Reads</div>
+            <!-- Carousel -->
+            <div class="carousel" data-carousel>
+
+                <!-- Button:Left -->
+                <button class="carousel__button carousel__button--previous" data-carousel-button="previous">
+                    &#10094;
+                </button>
+
+                <div class="carousel__slides" data-slides>
+                    <div class="carousel__slide" data-active>
+                        <img src="" alt="Slide 1" />
+                    </div>
+
+                    <div class="slide">
+                        <img src="" alt="Slide 2" />
+                    </div>
+
+                    <div class="slide">
+                        <img src="" alt="Slide 3" />
+                    </div>
+
+                    <!-- Button:Right -->
+                    <button class="carousel__button
+                carousel__button--next" data-carousel-button="next">
+                        &#10095;
+                    </button>
+
+                    <!-- Carousel: Navigation -->
+                    <nav class="carousel__nav">
+                        <button class="carousel__indicator current-slide"></button>
+                        <button class="carousel__indicator"></button>
+                        <button class="carousel__indicator"></button>
+                        <button class="carousel__indicator"></button>
+                        <button class="carousel__indicator"></button>
+                    </nav>
+                </div>
+        </aside>
+
+
+        <footer class="footer">
+            <p>Copyright © OscarCanedoCodes</p>
+        </footer>
+    </div>
 </body>
 
 </html>
