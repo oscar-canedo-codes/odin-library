@@ -177,3 +177,45 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 });
+
+1. Display Books Functionality
+
+   Test Cases:
+   should render all books as cards or table rows on the page
+   should correctly render book details (title, author, pages, read status)
+   Initial Approach: Simple tests that check if the books are displayed correctly. Only test rendering issues if UI bugs are identified.
+
+2. Add Book Form
+
+   Test Cases:
+   should open the add book form when NEW BOOK button is clicked
+   should collect user input correctly from the form
+
+   Initial Approach: Focus on functionality over edge cases. Ensure the form opens and captures input. Don't validate input format initially unless specific requirements are known.
+
+3. Form Submission and Adding Books
+
+   Test Cases:
+   should add a new book to the library on form submission
+   should not add a book without a title (basic validation)
+   Initial Approach: Test happy paths (correct input) and a few critical negative scenarios (missing title). Detailed input validation (e.g., character limits) can be deferred unless specified in requirements.
+
+4. Remove Book
+
+   Test Cases:
+   should remove a book from the library when the remove button is clicked
+   should decrease the library length by one when a book is removed
+   Initial Approach: Simple functional tests. Avoid checking edge cases (e.g., removing the same book twice) unless they pose a realistic risk.
+
+5. Toggle Read Status
+
+   Test Cases:
+   should toggle the read status of a book when the toggle button is clicked
+   should reflect the updated read status in the DOM
+   Initial Approach: Focus on changing status functionality. Complex scenarios (e.g., invalid status values) are unlikely if UI restricts the input to toggle only.
+
+6. DOM-Data Association
+
+   Test Cases:
+   should correctly associate DOM elements with book objects
+   Initial Approach: Ensure data attributes link to book objects. Only delve into detailed attribute checking if bugs occur.
