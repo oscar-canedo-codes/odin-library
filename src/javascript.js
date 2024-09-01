@@ -23,14 +23,14 @@ Book.prototype.toggleReadStatus = function () {
 
 function setupEventListeners() {
     const addBookButton = document.getElementById("addBookButton");
-    const closeButton = document.getElementById("modalClose");
+    const closeModal = document.getElementById("modalClose");
     const addBookForm = document.getElementById("form");
     const library = document.getElementById("library");
 
     // OPEN Modal
     addBookButton.addEventListener('click', showModal);
     // CLOSE Modal
-    closeButton.addEventListener('click', hideModal);
+    closeModal.addEventListener('click', hideModal);
     // CLOSES Modal IF clicking outside
     window.addEventListener('click', handleOutsideClick);
     // SUBMIT form to add new books
@@ -58,10 +58,6 @@ function handleOutsideClick(event) {
 }
 
 // 5. FORM handling
-// CAPTURE form input
-//  CREATES a new 'book' object
-// ADDS to library grid
-// HIDES modal
 
 function handleFormSubmit(event) {
     event.preventDefault();
